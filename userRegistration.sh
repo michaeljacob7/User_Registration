@@ -4,7 +4,7 @@ echo "Welcome to User Registration Program"
 
 function firstName()
 {
-	echo "Enter the first name"
+	echo "Enter the first name: "
 	read word
 	pattern="^[a-zA-z]{3,}"
 
@@ -18,7 +18,7 @@ function firstName()
 
 function lastName()
 {
-	echo "Enter the last name" 
+	echo "Enter the last name: " 
 	read word
 	pattern="^[a-zA-Z]{3,}"
 
@@ -44,10 +44,23 @@ function email()
 	fi
 }
 
+function mobileNumber()
+{
+	read -p "Enter mobile number: " num
+	pattern="^(0/91)?[7-9][0-9]{9}$"
+	if [[ $num =~ $pattern ]]
+	then
+		echo "Valid number"
+	else
+		echo "Invalid number"
+	fi
+}
+
 function main()
 {
 firstName
 lastName
 email
+mobileNumber
 }
 main
