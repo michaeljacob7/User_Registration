@@ -29,9 +29,25 @@ function lastName()
 		echo "Invalid last name"
 	fi
 }
+
+function email()
+{
+	echo "Enter e-mail id"
+	read email
+	pattern="^[A-Za-z0-9.%+-]+@[a-z0-9.-]+\\.[A-Za-z]{2,6}$"
+
+	if [[ $email =~ $pattern ]]
+	then
+		echo "Valid e-mail id"
+	else
+		echo "Invalid e-mail id"
+	fi
+}
+
 function main()
 {
 firstName
 lastName
+email
 }
 main
