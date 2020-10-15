@@ -56,11 +56,10 @@ function mobileNumber()
 	fi
 }
 
-function passwordC()
+function passwordMod()
 {
 	read -p "Enter password: " password
-	passPattern="^[a-zA-z]{8}$"
-	if [[ $password =~ $passPattern ]]
+	if [[ ${#password} -ge 6 && "$password" == *[[:lower:]]"* && "$password" == *[[:upper:]]* ]]
 	then
 		echo "Valid password"
 	else
@@ -74,6 +73,6 @@ firstName
 lastName
 email
 mobileNumber
-passwordC
+passwordMod
 }
 main
