@@ -56,11 +56,24 @@ function mobileNumber()
 	fi
 }
 
+function passwordC()
+{
+	read -p "Enter password: " password
+	passPattern="^[a-zA-z]{8}$"
+	if [[ $password =~ $passPattern ]]
+	then
+		echo "Valid password"
+	else
+		echo "Invalid password"
+	fi
+}
+
 function main()
 {
 firstName
 lastName
 email
 mobileNumber
+passwordC
 }
 main
